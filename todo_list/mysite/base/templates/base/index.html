@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Go Back</a>
+</div>
+
+<div class="card-body">
+    <p>Do you think a to-do list is beneficial for college students?</p>
+    <!-- Other blocks -->
+    <div id="input">
+        <form method="POST" class="text-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button" type="submit" class="submit btn">Submit</button>
+        </form>
+    </div>
+    <!-- Other blocks -->
+</div>
+    
+{% endblock %}
