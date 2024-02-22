@@ -15,7 +15,7 @@ class Task(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     
 
-    def days_until_due(self):
+    def days_til_due(self):
         today = date.today()
         if self.due_date is not None:
             return (self.due_date - today).days
@@ -24,7 +24,7 @@ class Task(models.Model):
 
 
     def __str__(self):
-        days = self.days_until_due()
+        days = self.days_til_due()
 
         if days is None:
             return f"{self.title} - Due date not set"
