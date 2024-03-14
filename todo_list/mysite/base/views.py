@@ -9,6 +9,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.db.models import Q
 
 from .models import Task
 
@@ -57,11 +58,16 @@ class TaskList(LoginRequiredMixin, ListView):
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
             context['tasks'] = context['tasks'].filter(
-                title__startswith=search_input)
-
+                Q(title__startswith=search_input) | Q(task_group__startswith=search_input))
+        
+        
         context['search_input'] = search_input
 
+        
         return context
+        
+
+    
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
@@ -69,7 +75,7 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['title', 'description', 'complete', 'due_date']
+    fields = ['title', 'description', 'complete', 'due_date', 'assignee', 'task_group']
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):
@@ -78,7 +84,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description', 'complete', 'due_date']
+    fields = ['title', 'description', 'complete', 'due_date', 'assignee', 'task_group']
     success_url = reverse_lazy('tasks')
 
 class DeleteView(LoginRequiredMixin, DeleteView):

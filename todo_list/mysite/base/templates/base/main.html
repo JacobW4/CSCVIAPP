@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'mystyles.css' %}">
 
 
         <style>
@@ -50,7 +52,7 @@
                 color: #fff;
                 padding: 10px;
                 border-radius: 5px 5px 0 0;
-                background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);
+                background: linear-gradient(90deg, #eed9c4 0%, #e4d5b7 43%, #d2b48c 100%);
             }
 
             .header-bar a {
@@ -64,7 +66,7 @@
                 justify-content: space-between;
                 padding: 20px;
                 background-color: #fff;
-                border-top: 1px solid rgb(3, 140, 252);
+                border-top: 1px solid rgb(210,180,140);
             }
 
             .task-title {
@@ -93,7 +95,7 @@
             .delete-link {
                 text-decoration: none;
                 font-weight: 900;
-                color: #cf4949;
+                color: #d2b48c;
                 font-size: 22px;
                 line-height: 0;
             }
@@ -106,7 +108,7 @@
             }
 
             #add-link {
-                color: #EB796F;
+                color: #d2b48c;
                 text-decoration: none;
                 font-size: 42px;
                 text-shadow: 1px 1px #81413b;
@@ -115,7 +117,7 @@
             input[type=text],
             input[type=password],
             textarea {
-                border: 1px solid #EB796F;
+                border: 1px solid  #d2b48c;
                 border-radius: 5px;
                 padding: 10px;
                 width: 90%;
@@ -127,9 +129,9 @@
             }
 
             .button {
-                border: 1px solid #EB796F;
+                border: 1px solid  #d2b48c;
                 background-color: #FAFAFA;
-                color: #EB796F;
+                color:  #d2b48c;
                 padding: 10px;
                 font-size: 14px;
                 border-radius: 5px;
@@ -140,6 +142,8 @@
             .card-body {
                 padding: 20px;
             }
+
+
         </style>
 
     </head>
@@ -149,5 +153,6 @@
 
             {% endblock content %}
         </div>
+        
     </body>
 </html>

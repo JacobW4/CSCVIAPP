@@ -30,6 +30,7 @@ class Migration(migrations.Migration):
                 ("description", models.TextField(blank=True, null=True)),
                 ("complete", models.BooleanField(default=False)),
                 ("created", models.DateTimeField(auto_now_add=True)),
+                ("assignee", models.CharField(max_length=200)),
                 (
                     "user",
                     models.ForeignKey(

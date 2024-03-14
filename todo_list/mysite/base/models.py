@@ -9,6 +9,8 @@ from datetime import date
 class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
+    assignee = models.CharField(null=True, blank=True, max_length=200)
+    task_group = models.CharField(null=True, blank=True, max_length=200)
     due_date = models.DateField(default=date.today)
     description = models.TextField(null=True, blank=True)
     complete = models.BooleanField(default=False)
@@ -47,6 +49,9 @@ class Task(models.Model):
 
     #def __str__(self):
         #return self.title
+
+    #def __str__(self):
+        #return f"Assignor: {self.assignee}"
         
 
     class Meta:
