@@ -1,0 +1,42 @@
+body {
+    background-image: url("listbg.webp")    
+}
+
+/*#MyClockDisplay {
+    position: bottom;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #141718;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 7px;
+   
+
+
+}*/
+
+/*.clock {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #17D4FE;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}*/
+
+.clock {
+    position: fixed; /* Use fixed positioning to keep the clock fixed relative to the viewport */
+    top: 20px; /* Adjust the top distance as needed */
+    left: 20px; /* Adjust the left distance as needed */
+    font-size: 60px;
+    width: fit-content;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+

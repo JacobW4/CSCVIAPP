@@ -150,9 +150,16 @@
     <body>
         <div class="container">
             {% block content %}
+            <!--<div id="MyClockDisplay" class="clock"></div>-->
 
             {% endblock content %}
         </div>
-        
+        <div id="MyClockDisplay" class="clock"></div>
+
+        <script src="{% static 'script.js' %}"></script>
+
+        <script>
+            showTime();
+        </script>
     </body>
 </html>
