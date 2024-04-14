@@ -1,5 +1,3 @@
-console.log("My js is working")
-
 function showTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23
@@ -21,19 +19,11 @@ function showTime(){
     s = (s < 10) ? "0" + s : s;
     
     var time = h + ":" + m + ":" + s + " " + session;
-    var element = document.getElementById("MyClockDisplay")
-    if (element !== null) {
-        document.getElementById("MyClockDisplay").innerText = time;
-        document.getElementById("MyClockDisplay").textContent = time;
-    }
-    
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
     
     setTimeout(showTime, 1000);
     
 }
 
 showTime();
-
-
-
-

@@ -92,6 +92,16 @@
                 border-radius: 50%;
             }
 
+            .task-overdue.task-wrapper:not(.task-complete) .task-incomplete-icon {
+                background-color: red; /* Set background color of the incomplete icon to red for incomplete and overdue tasks */
+            }
+            
+            .task-overdue.task-wrapper:not(.task-complete) .task-title a {
+                color: red; /* Set text color to red for incomplete and overdue tasks */
+            }
+            
+            
+
             .delete-link {
                 text-decoration: none;
                 font-weight: 900;
