@@ -1,20 +1,27 @@
-console.log("My js is working")
-
 function showTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23
     var m = date.getMinutes(); // 0 - 59
     var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
+    //var session = "AM";
+    var session = (h < 12) ? "AM" : "PM"; // Determine session based on h
     
-    if(h == 0){
+    /*if(h == 0){
         h = 12;
     }
     
     if(h > 12){
         h = h - 12;
         session = "PM";
+    }*/
+    
+    if (h == 0) {
+        h = 12;
+    } else if (h > 12) {
+        h = h - 12;
+        session = "PM";
     }
+    
     
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
